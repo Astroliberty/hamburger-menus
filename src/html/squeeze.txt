@@ -1,0 +1,3 @@
+<button class="menu squeeze">
+  <span></span>
+</button>

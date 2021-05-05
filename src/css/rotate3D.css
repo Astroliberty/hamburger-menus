@@ -1,0 +1,63 @@
+.rotate3D {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  background: none;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.rotate3D span {
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 0 auto;
+  background: #000;
+  -webkit-transition: background 0.4s ease;
+  transition: background 0.4s ease;
+}
+.rotate3D span:before, .rotate3D span:after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 0 auto;
+  background: #000;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.rotate3D span:before {
+  margin-top: -9px;
+  -webkit-transition: -webkit-transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.rotate3D span:after {
+  margin-top: 7px;
+  -webkit-transition: -webkit-transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.rotate3D.menu-active span {
+  background: transparent;
+}
+.rotate3D.menu-active span:before {
+  -webkit-transform: translate3d(0, 7.5px, 0) rotate(135deg);
+  transform: translate3d(0, 7.5px, 0) rotate(135deg);
+}
+.rotate3D.menu-active span:after {
+  -webkit-transform: translate3d(0, -7.5px, 0) rotate(-135deg);
+  transform: translate3d(0, -7.5px, 0) rotate(-135deg);
+}

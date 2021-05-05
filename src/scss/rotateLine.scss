@@ -1,0 +1,65 @@
+.rotateLine {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  background: none;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 0 auto;
+    background: #000;
+    transition: transform .4s ease;
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      margin: 0 auto;
+      background: #000;
+      transition: all 0.3s;
+    }
+
+    &:before {
+      margin-top: -9px;
+      transition: transform .75s cubic-bezier(.215,.61,.355,1);
+    }
+
+    &:after {
+      margin-top: 7px;
+      transition: transform .75s cubic-bezier(.215,.61,.355,1);
+    }
+  }
+
+  &.menu-active {
+    span {
+      background: transparent;
+
+      &:before {
+        transform: rotate(225deg);
+        margin-top: -1px;
+      }
+
+      &:after {
+        transform: rotate(-225deg);
+        margin-top: 0px;
+      }
+    }
+  }
+}

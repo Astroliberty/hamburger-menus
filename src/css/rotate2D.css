@@ -1,0 +1,71 @@
+.rotate2D {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  background: none;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.rotate2D span {
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 0 auto;
+  background: #000;
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+}
+.rotate2D span:before, .rotate2D span:after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 0 auto;
+  background: #000;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.rotate2D span:before {
+  margin-top: -9px;
+  -webkit-transition: -webkit-transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.rotate2D span:after {
+  margin-top: 7px;
+  -webkit-transition: -webkit-transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.rotate2D.menu-active span {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  background: transparent;
+}
+.rotate2D.menu-active span:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 6px 6px;
+  transform-origin: 6px 6px;
+}
+.rotate2D.menu-active span:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 8px -4.5px;
+  transform-origin: 8px -4.5px;
+}
