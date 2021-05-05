@@ -7,6 +7,11 @@ A collection of Hamburger Menus
 [https://hamburger-menus.astroliberty.com/](https://hamburger-menus.astroliberty.com/)
 
 
+## Built With
+
+- Vue 3.0
+- Composition API
+
 ## Project setup
 
 ```
@@ -30,6 +35,11 @@ npm run build
 ```
 npm run lint
 ```
+
+## Author
+
+[@sai_______0](https://twitter.com/sai_______0)  
+[@chocolat5](https://twitter.com/fyurie_)
 
 ## License
 
