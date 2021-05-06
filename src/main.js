@@ -19,11 +19,12 @@ requireType(htmlRequire);
 require("@/assets/scss/main.scss");
 
 const app = createApp(App);
-app.use(Toaster, {
-  position: "bottom-right",
-  duration: 1500,
-  maxToasts: 2,
-  useDefaultCss: false,
-  className: "toast",
-});
-app.mount("#app");
+app
+  .use(Toaster, {
+    position: "bottom-right",
+    duration: 1500,
+    maxToasts: 2,
+    useDefaultCss: false,
+    className: "toast",
+  })
+  .mount("#app");
