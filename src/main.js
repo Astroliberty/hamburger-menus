@@ -19,6 +19,7 @@ requireType(htmlRequire);
 require("@/assets/scss/main.scss");
 
 const app = createApp(App);
+
 app
   .use(Toaster, {
     position: "bottom-right",
@@ -27,4 +28,5 @@ app
     useDefaultCss: false,
     className: "toast",
   })
-  .mount("#app");
+  .provide("toast", app.config.globalProperties.$toast);
+app.mount("#app");
