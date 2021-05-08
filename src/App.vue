@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import { getCurrentInstance, reactive, watch } from "vue";
+import { inject, reactive, watch } from "vue";
 import { useIcons } from "./icon";
 import { useData } from "./data";
 import { useFunctions } from "./function";
@@ -74,8 +74,7 @@ export default {
     const { snsIcons } = useIcons();
     const { emojis, effects } = useData();
     const { copy, setEmoji } = useFunctions();
-
-    const toast = getCurrentInstance().ctx.$toast;
+    const toast = inject("toast");
     const showToast = (name) => {
       const emoji = setEmoji(emojis);
       toast.show(`Copied <strong>${name}</strong> to clipboard ${emoji}`);
