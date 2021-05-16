@@ -1,4 +1,4 @@
-.fadeOut {
+.fadeOutReverse {
   -webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -50,11 +50,11 @@
       background: transparent;
 
       &:before {
-        transform: rotate( 45deg ) translate3d(7px, 4.5px, 0);
+        transform: rotate( -45deg ) translate3d(-4.5px, 7px, 0);
       }
 
       &:after {
-        transform: rotate( -45deg ) translate3d(7px, -4.5px, 0);
+        transform: rotate( 45deg ) translate3d(-4.5px, -7px, 0);
       }
     }
   }
